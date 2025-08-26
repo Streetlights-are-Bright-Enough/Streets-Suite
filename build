@@ -1,0 +1,30 @@
+#!/bin/bash
+# Build script for Mega Drive Diagnostics ROM
+# Requirements: vasm68k_mot in PATH
+
+# Name of the source and output
+SRC="diagnostic.asm"
+OUT="diagnostic.bin"
+
+# Colors for terminal
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+# Check for vasm68k
+if ! command -v vasm68k_mot &> /dev/null
+then
+    echo -e "${RED}Error: vasm68k_mot not found in PATH.${NC}"
+    exit 1
+fi
+
+# Build
+echo -e "${GREEN}Building Mega Drive ROM...${NC}"
+vasm68k_mot -Fbin -o "$OUT" "$SRC"
+
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}Build successful: $OUT${NC}"
+else
+    echo -e "${RED}Build failed!${NC}"
+    exit 1
+fi
