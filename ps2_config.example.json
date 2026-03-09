@@ -1,0 +1,26 @@
+{
+  "emulator_path": "pcsx2",
+  "bios_dir": "./bios",
+  "roms_dir": "./roms",
+  "memcards_dir": "./memcards",
+  "save_states_dir": "./savestates",
+  "boot_mode": "disc",
+  "boot_timeout_s": 20,
+  "smoke_runtime_s": 8,
+  "image_extensions": [
+    ".iso",
+    ".chd",
+    ".cso",
+    ".bin",
+    ".gz"
+  ],
+  "diagnostic_targets": {
+    "gamepad_tester": "./ps2sdk/gamepad_tester/gamepad_tester.elf",
+    "ram_tester": "./ps2sdk/ram_tester/ram_tester.elf",
+    "vram_tester": "./ps2sdk/vram_tester/vram_tester.elf",
+    "gpu_tester": "./ps2sdk/gpu_tester/gpu_tester.elf",
+    "cpu_tester": "./ps2sdk/cpu_tester/cpu_tester.elf",
+    "memory_card_reader": "./ps2sdk/mc_reader/mc_reader.elf",
+    "laser_tester": "./ps2sdk/laser_tester/laser_tester.elf"
+  }
+}
